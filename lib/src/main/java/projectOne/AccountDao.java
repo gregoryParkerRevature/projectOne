@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import jdk.internal.net.http.common.Log;
+
 public class AccountDao {
 
     private Connection connection;
@@ -66,7 +68,6 @@ public class AccountDao {
             statement.setString(1, acctName);
             statement.setDouble(2, acctBalance);
             statement.execute();
-            System.out.println("we gettinghere");
         }catch (SQLException e){
             //logger
         }
@@ -76,7 +77,6 @@ public class AccountDao {
         List<Account> list = getAccounts();
         for(Account acct: list){
             String account = acct.getAcctName();
-            System.out.println(account + " " + acctName);
             if(account.equals(acctName)){
                 return false;
             }

@@ -26,7 +26,6 @@ public class UserDao {
 
             rSet.next();
             loggedUser = new User(rSet.getString("userName"), rSet.getString("userPassword"));
-            System.out.println(rSet.getString("userName") + " " + rSet.getString("userPassword"));
         }catch (SQLException e){
             //logger
         }
