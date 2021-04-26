@@ -12,29 +12,32 @@
         
     </head>
     <body>
-
+        <div class="row">
+         <div class="col-md-4"></div>
+         <div class="col-md-4">
         <form method="post" action="addAccount">
-        <div class="row mb-3">
-
-            <div class="row mb-3">
-                <div class="col-md-1"></div>
-                <div class="col-md-4">
-                <label for="balanceInput" class="form-label">New Account Name:</label>
-                <input type="text" name="newAccount" class="form-contorl" required>
+            
+            <div class="card text-white bg-secondary mb-3" style="text-align: center; margin-top: 50px;">
+                <div class="card-header">
+                  Add Account
                 </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                        <label for="balanceInput" class="form-label">New Account Name:</label>
+                        <input type="text" placeholder="Enter Name" name="newAccount" style="width: 30%;" class="form-contorl" required>
+                  </li>
+                  <li class="list-group-item">
+                      <label for="balanceInput" class="form-label">Balance:</label>
+                      <input type="text" placeholder="Enter Balance" name="newBalance" style="width: 30%;"class="form-contorl" required>
+                  </li>
+                  <li class="list-group-item">
+                      <button type="submit" class="btn btn-success" id="button">Add</button>
+                  </li>
+                </ul>
             </div>
-
-        <div class="row mb-3">
-            <div class="col-md-1"></div>
-            <div class="col-md-4">
-            <label for="balanceInput" class="form-label">New Account Balance:</label>
-            <input type="text" name="newBalance" class="form-contorl" required>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <button type="submit" class="btn btn-success btn-sm">Add</button>
-        </div>
         </form>
+        </div>
+        </div>
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
