@@ -11,3 +11,4 @@ CREATE TABLE Users(
 
 INSERT INTO accounts(acctName, acctBalance) VALUES ('venmo', 20) , ('cashapp', 20);
 INSERT INTO Users(userName, userPassword) VALUES ('admin', 'admin');
+INSERT INTO Users(userName, userPassword) VALUES ('greg', 'greg');

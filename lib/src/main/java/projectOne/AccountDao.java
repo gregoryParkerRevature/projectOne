@@ -65,6 +65,8 @@ public class AccountDao {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO accounts (acctName, acctBalance) VALUES (?,?)");
             statement.setString(1, acctName);
             statement.setDouble(2, acctBalance);
+            statement.execute();
+            System.out.println("we gettinghere");
         }catch (SQLException e){
             //logger
         }
@@ -73,10 +75,13 @@ public class AccountDao {
     public boolean checkAccountName(String acctName){
         List<Account> list = getAccounts();
         for(Account acct: list){
-            if(acct.getAcctName() == acctName)
-                return true;
+            String account = acct.getAcctName();
+            System.out.println(account + " " + acctName);
+            if(account.equals(acctName)){
+                return false;
+            }
         }
-        return false;
+        return true;
     }
     
 }

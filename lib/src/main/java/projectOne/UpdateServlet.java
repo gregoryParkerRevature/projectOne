@@ -28,8 +28,8 @@ public class UpdateServlet extends HttpServlet{
             aDao.updateAccount(acctName, acctBalance);
 
             //make redirect
-            resp.sendRedirect("index.html");
-            
+            resp.sendRedirect("managerDashboard.html");
+
         }catch (NumberFormatException e){
             resp.sendRedirect("updateAccount.html");
         }

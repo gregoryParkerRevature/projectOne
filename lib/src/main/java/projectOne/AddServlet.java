@@ -25,20 +25,19 @@ public class AddServlet extends HttpServlet{
         
         String acctName = req.getParameter("newAccount");
         boolean isAccount = aDao.checkAccountName(acctName);
-        System.out.println("we are gettin here");
+        System.out.println(isAccount);
         if(isAccount){
             try{
                 Double acctBalance = Double.parseDouble(req.getParameter("newBalance"));
                 aDao.addAccount(acctName, acctBalance);
 
                 //make redirect
-                resp.sendRedirect("index.html");
+                resp.sendRedirect("managerDashboard.html");
                 
             }catch (NumberFormatException e){
-                resp.sendRedirect("addAccount.html");
+                resp.sendRedirect("newAccount.html");
             }
         }else{
-            
             resp.sendRedirect("newAccount.html");
         }
         

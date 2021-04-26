@@ -26,7 +26,7 @@ public class AccountServlet extends HttpServlet{
         aDao.deleteAccount(acctName);
 
         //make redirect
-        resp.sendRedirect("index.html");
+        resp.sendRedirect("managerDashboard.html");
     }
 }
 
