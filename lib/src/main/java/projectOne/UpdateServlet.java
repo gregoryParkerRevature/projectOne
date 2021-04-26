@@ -21,12 +21,19 @@ public class UpdateServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        
         String acctName = req.getParameter("accountSelect");
-        Double acctBalance = Double.parseDouble(req.getParameter("newBalance"));
-        aDao.updateAccount(acctName, acctBalance);
+        try{
+            Double acctBalance = Double.parseDouble(req.getParameter("newBalance"));
+            aDao.updateAccount(acctName, acctBalance);
 
-        //make redirect
-        resp.sendRedirect("index.html");
+            //make redirect
+            resp.sendRedirect("index.html");
+            
+        }catch (NumberFormatException e){
+            resp.sendRedirect("updateAccount.html");
+        }
+        
     }
 
 

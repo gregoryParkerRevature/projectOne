@@ -52,13 +52,31 @@ public class AccountDao {
         try{
 
             PreparedStatement statement = connection.prepareStatement("UPDATE accounts SET acctBalance = ? where acctName = ?");
-            System.out.println(acctName + " " + acctBalance);
             statement.setDouble(1, acctBalance);
             statement.setString(2, acctName);
             statement.execute();
         }catch (SQLException e){
             System.out.println("error");
         }
+    }
+
+    public void addAccount(String acctName, Double acctBalance){
+        try{
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO accounts (acctName, acctBalance) VALUES (?,?)");
+            statement.setString(1, acctName);
+            statement.setDouble(2, acctBalance);
+        }catch (SQLException e){
+            //logger
+        }
+    }
+
+    public boolean checkAccountName(String acctName){
+        List<Account> list = getAccounts();
+        for(Account acct: list){
+            if(acct.getAcctName() == acctName)
+                return true;
+        }
+        return false;
     }
     
 }
